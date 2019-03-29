@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml 
+    
+spring:
+  application:
+    name: msa-service-coffee-status
+
+#Config Server      
+  cloud:
+    config:
+      uri: http://172.20.10.2:8888 
+      name: msa-architecture-config-server
+
+#Eureka Client   
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://172.20.10.2:9091/eureka/
